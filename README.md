@@ -7,7 +7,6 @@ Weather forecast build using vanila JS inspired by [aditpee](github.com/aditpee)
 - Geo api
 - Current Weather api
 - 16 Hour Forecast
-<br>
 
 ## Source
 - [Unsplash](https://unsplash.com/)
