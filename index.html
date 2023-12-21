@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Web</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body bgcolor="grey">
+    <div id="loadingScreen" class="loading-screen">
+      <div class="loading-spinner"></div>
+    </div>
+
+    <div class="app">
+      <div class="container">
+        <h3 class="brand">ReWeather</h3>
+        <div class="current">
+          <h1 class="temp" id="currentTemp"></h1>
+          <div>
+            <h3 class="current--name" id="cityName">Lorem</h3>
+            <small id="currentTime">
+              <span>06:09</span> |
+              <span>Sat, 06 Dec 2023</span>
+            </small>
+          </div>
+          <div class="current--weather">
+            <img
+              src="./img/icons/01n.svg"
+              alt=""
+              class="icon"
+              id="currentIcon"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="panel">
+        <form id="searchLocation" class="search">
+          <input
+            type="text"
+            class="search--input"
+            placeholder="Type a city..."
+          />
+          <button type="submit" class="search--submit">
+            <img src="./img/icons/search.svg" alt="" class="search--icon" />
+          </button>
+        </form>
+        <div class="panel--container">
+          <div class="detail">
+            <h3>Weather Detail</h3>
+            <ul class="detail--information">
+              <li class="humidity">
+                Humidity
+                <div class="detail--humidity">
+                  <p id="detailHumidity">2%</p>
+                  <span class="icon"
+                    ><img
+                      src="./img/icons/humadity.svg"
+                      alt=""
+                      class="icon"
+                      srcset=""
+                      height="32"
+                      width="32"
+                  /></span>
+                </div>
+              </li>
+              <li class="wind">
+                Windspeed
+                <div class="detail--wind">
+                  <p id="detailWind">10km/h</p>
+                  <span class="icon"
+                    ><img
+                      src="./img/icons/wind.svg"
+                      alt=""
+                      class="icon"
+                      srcset=""
+                      height="32"
+                      width="32"
+                  /></span>
+                </div>
+              </li>
+              <li class="min">
+                Temp Min
+                <div class="detail--min">
+                  <p id="detailMin">30&#176;</p>
+                  <span class="icon"
+                    ><img
+                      src="./img/icons/temp-min.svg"
+                      alt=""
+                      class="icon"
+                      srcset=""
+                      height="32"
+                      width="32"
+                  /></span>
+                </div>
+              </li>
+              <li class="max">
+                Temp Max
+                <div class="detail--max">
+                  <p id="detailMax">99&#176;</p>
+                  <span class="icon"
+                    ><img
+                      src="./img/icons/temp-max.svg"
+                      alt=""
+                      class="icon"
+                      srcset=""
+                      height="32"
+                      width="32"
+                  /></span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <hr class="hr--white" align="center" />
+          <div class="forecast">
+            <h3>Weather Forecast</h3>
+            <ul class="forecast--list" id="forecastList"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./script.js"></script>
+</html>
