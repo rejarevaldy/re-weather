@@ -9,9 +9,13 @@ const detailWind = document.getElementById("detailWind");
 const detailMax = document.getElementById("detailMax");
 const detailMin = document.getElementById("detailMin");
 
-const API_KEY = "";
-
 const loadingScreen = document.getElementById("loadingScreen");
+
+const panel = document.getElementById("panel");
+const body = document.body;
+
+const API_KEY = "ddb210bc158523392e3ea81093215841";
+
 let geoLocationData;
 
 function showLoadingScreen() {
@@ -23,6 +27,14 @@ function hideLoadingScreen() {
 }
 
 getClientData();
+
+panel.addEventListener("mouseenter", function () {
+  body.style.cursor = 'url("/img/icons/scroll.svg"), auto';
+});
+
+panel.addEventListener("mouseleave", function () {
+  body.style.cursor = "auto";
+});
 
 searchForm.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -66,7 +78,6 @@ async function getWeatherData(latitude, longitude) {
       `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${API_KEY}`
     );
     const data = await response.json();
-    console.log(data);
     changeCurrent(data);
     changeDetail(data);
 
@@ -168,7 +179,7 @@ function changeForecast(data) {
     const detailElement = document.createElement("div");
     detailElement.className = "forecast--detail";
     const temperatureParagraph = document.createElement("p");
-    temperatureParagraph.innerHTML = `${listItem.main.temp}&#176;`;
+    temperatureParagraph.innerHTML = `${Math.round(listItem.main.temp)}°`;
     detailElement.appendChild(temperatureParagraph);
 
     listItemElement.appendChild(iconElement);
