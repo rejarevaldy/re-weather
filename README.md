@@ -1,6 +1,4 @@
 ## ReWeather
-Weather forecast build using vanila JS inspired by [aditpee](github.com/aditpee)
-<br>
 
 ## API 
 [openweahtermap](https://openweathermap.org) 
